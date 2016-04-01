@@ -2,8 +2,13 @@ BXenclose Package
 =================
 
 LaTeX: To enclose the document body with some pieces of code
-
-Blah....
+                                                            
+The package enables authors to designate in the preamble to make the
+document body enclosed with the given pieces of code. As is known,
+there are already various mechanisms provided by LaTeX kernel or
+packages that attach “hooks” at the beginning and end of documents.
+This package tries harder to win the race, that is, place the given
+code as close as the real document body.
 
 ### System requirement
 
@@ -30,19 +35,24 @@ No options are available.
 
 ### Usage
 
+This package defines the following single command:
+
     \enclosebodywith{<begin>}{<end>}
 
-Makes the document body enclosed with `<begin>`  and `<end>`.
-That is, `<begin>` is executed immediately before the body text
-(probably after other “begin-document hooks” provided by LaTeX itself
-and other packages) and `<end>`  is executed immediately after the
+This command makes the document body enclosed with `<begin>`  and
+`<end>`. That is, `<begin>` is executed immediately before the body
+text (probably after other “begin-document hooks” provided by LaTeX
+itself and other packages) and `<end>`  is executed immediately after
 the body text (probably before other “end-document hooks”).
-Note that `<begin>` code does not belong to the preamble.
+
+Note that both `<begin>` and `<end>` code are treated as part of the
+document body. In particular, `<begin>` code cannot contain any
+preamble-restricted commands (such as `\listfiles`).
 
 Revision History
 ----------------
 
-  * Version 0.2  ‹2016/04/01›
+  * Version 0.2  〈2016/04/01〉
       - The first public version.
 
 --------------------
