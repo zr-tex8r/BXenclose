@@ -8,7 +8,7 @@ document body enclosed with the given pieces of code. As is known,
 there are already various mechanisms provided by LaTeX kernel or
 packages that attach “hooks” at the beginning and end of documents.
 This package tries harder to win the race, that is, place the given
-code as close as the real document body.
+code as close to the real document body as possible.
 
 ### System requirement
 
